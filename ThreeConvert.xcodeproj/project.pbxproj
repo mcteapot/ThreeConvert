@@ -21,12 +21,12 @@
 		E2F36FC214E5D7B200470F0F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		E2F36FC314E5D7B200470F0F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E2F36FC414E5D7B200470F0F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		E2F36FC714E5D7B200470F0F /* ThreeConvert-Info.plist */ = {isa = PBXFileReference; path = "ThreeConvert-Info.plist"; sourceTree = "<group>"; };
+		E2F36FC714E5D7B200470F0F /* ThreeConvert-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThreeConvert-Info.plist"; sourceTree = "<group>"; };
 		E2F36FC914E5D7B200470F0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E2F36FCB14E5D7B200470F0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E2F36FCD14E5D7B200470F0F /* ThreeConvert-Prefix.pch */ = {isa = PBXFileReference; path = "ThreeConvert-Prefix.pch"; sourceTree = "<group>"; };
+		E2F36FCD14E5D7B200470F0F /* ThreeConvert-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThreeConvert-Prefix.pch"; sourceTree = "<group>"; };
 		E2F36FCF14E5D7B200470F0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		E2F36FD114E5D7B200470F0F /* ThreeConvertAppDelegate.h */ = {isa = PBXFileReference; path = ThreeConvertAppDelegate.h; sourceTree = "<group>"; };
+		E2F36FD114E5D7B200470F0F /* ThreeConvertAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeConvertAppDelegate.h; sourceTree = "<group>"; };
 		E2F36FD214E5D7B200470F0F /* ThreeConvertAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeConvertAppDelegate.m; sourceTree = "<group>"; };
 		E2F36FD514E5D7B200470F0F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
