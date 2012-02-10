@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E2F36FC014E5D7B200470F0F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F36FBF14E5D7B200470F0F /* Cocoa.framework */; };
+		E2F36FCA14E5D7B200470F0F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2F36FC814E5D7B200470F0F /* InfoPlist.strings */; };
+		E2F36FCC14E5D7B200470F0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F36FCB14E5D7B200470F0F /* main.m */; };
+		E2F36FD014E5D7B200470F0F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E2F36FCE14E5D7B200470F0F /* Credits.rtf */; };
+		E2F36FD314E5D7B200470F0F /* ThreeConvertAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F36FD214E5D7B200470F0F /* ThreeConvertAppDelegate.m */; };
+		E2F36FD614E5D7B200470F0F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2F36FD414E5D7B200470F0F /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E2F36FBB14E5D7B200470F0F /* ThreeConvert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeConvert.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2F36FBF14E5D7B200470F0F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E2F36FC214E5D7B200470F0F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		E2F36FC314E5D7B200470F0F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E2F36FC414E5D7B200470F0F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E2F36FC714E5D7B200470F0F /* ThreeConvert-Info.plist */ = {isa = PBXFileReference; path = "ThreeConvert-Info.plist"; sourceTree = "<group>"; };
+		E2F36FC914E5D7B200470F0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E2F36FCB14E5D7B200470F0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E2F36FCD14E5D7B200470F0F /* ThreeConvert-Prefix.pch */ = {isa = PBXFileReference; path = "ThreeConvert-Prefix.pch"; sourceTree = "<group>"; };
+		E2F36FCF14E5D7B200470F0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		E2F36FD114E5D7B200470F0F /* ThreeConvertAppDelegate.h */ = {isa = PBXFileReference; path = ThreeConvertAppDelegate.h; sourceTree = "<group>"; };
+		E2F36FD214E5D7B200470F0F /* ThreeConvertAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeConvertAppDelegate.m; sourceTree = "<group>"; };
+		E2F36FD514E5D7B200470F0F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2F36FB814E5D7B200470F0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2F36FC014E5D7B200470F0F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E2F36FB014E5D7B200470F0F = {
+			isa = PBXGroup;
+			children = (
+				E2F36FC514E5D7B200470F0F /* ThreeConvert */,
+				E2F36FBE14E5D7B200470F0F /* Frameworks */,
+				E2F36FBC14E5D7B200470F0F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E2F36FBC14E5D7B200470F0F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2F36FBB14E5D7B200470F0F /* ThreeConvert.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2F36FBE14E5D7B200470F0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2F36FBF14E5D7B200470F0F /* Cocoa.framework */,
+				E2F36FC114E5D7B200470F0F /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2F36FC114E5D7B200470F0F /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2F36FC214E5D7B200470F0F /* AppKit.framework */,
+				E2F36FC314E5D7B200470F0F /* CoreData.framework */,
+				E2F36FC414E5D7B200470F0F /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		E2F36FC514E5D7B200470F0F /* ThreeConvert */ = {
+			isa = PBXGroup;
+			children = (
+				E2F36FD114E5D7B200470F0F /* ThreeConvertAppDelegate.h */,
+				E2F36FD214E5D7B200470F0F /* ThreeConvertAppDelegate.m */,
+				E2F36FD414E5D7B200470F0F /* MainMenu.xib */,
+				E2F36FC614E5D7B200470F0F /* Supporting Files */,
+			);
+			path = ThreeConvert;
+			sourceTree = "<group>";
+		};
+		E2F36FC614E5D7B200470F0F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E2F36FC714E5D7B200470F0F /* ThreeConvert-Info.plist */,
+				E2F36FC814E5D7B200470F0F /* InfoPlist.strings */,
+				E2F36FCB14E5D7B200470F0F /* main.m */,
+				E2F36FCD14E5D7B200470F0F /* ThreeConvert-Prefix.pch */,
+				E2F36FCE14E5D7B200470F0F /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E2F36FBA14E5D7B200470F0F /* ThreeConvert */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2F36FD914E5D7B200470F0F /* Build configuration list for PBXNativeTarget "ThreeConvert" */;
+			buildPhases = (
+				E2F36FB714E5D7B200470F0F /* Sources */,
+				E2F36FB814E5D7B200470F0F /* Frameworks */,
+				E2F36FB914E5D7B200470F0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThreeConvert;
+			productName = ThreeConvert;
+			productReference = E2F36FBB14E5D7B200470F0F /* ThreeConvert.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2F36FB214E5D7B200470F0F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = CyborgDino;
+			};
+			buildConfigurationList = E2F36FB514E5D7B200470F0F /* Build configuration list for PBXProject "ThreeConvert" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E2F36FB014E5D7B200470F0F;
+			productRefGroup = E2F36FBC14E5D7B200470F0F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E2F36FBA14E5D7B200470F0F /* ThreeConvert */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E2F36FB914E5D7B200470F0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2F36FCA14E5D7B200470F0F /* InfoPlist.strings in Resources */,
+				E2F36FD014E5D7B200470F0F /* Credits.rtf in Resources */,
+				E2F36FD614E5D7B200470F0F /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2F36FB714E5D7B200470F0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2F36FCC14E5D7B200470F0F /* main.m in Sources */,
+				E2F36FD314E5D7B200470F0F /* ThreeConvertAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E2F36FC814E5D7B200470F0F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2F36FC914E5D7B200470F0F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E2F36FCE14E5D7B200470F0F /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2F36FCF14E5D7B200470F0F /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		E2F36FD414E5D7B200470F0F /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2F36FD514E5D7B200470F0F /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E2F36FD714E5D7B200470F0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E2F36FD814E5D7B200470F0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E2F36FDA14E5D7B200470F0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThreeConvert/ThreeConvert-Prefix.pch";
+				INFOPLIST_FILE = "ThreeConvert/ThreeConvert-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E2F36FDB14E5D7B200470F0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThreeConvert/ThreeConvert-Prefix.pch";
+				INFOPLIST_FILE = "ThreeConvert/ThreeConvert-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2F36FB514E5D7B200470F0F /* Build configuration list for PBXProject "ThreeConvert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2F36FD714E5D7B200470F0F /* Debug */,
+				E2F36FD814E5D7B200470F0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2F36FD914E5D7B200470F0F /* Build configuration list for PBXNativeTarget "ThreeConvert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2F36FDA14E5D7B200470F0F /* Debug */,
+				E2F36FDB14E5D7B200470F0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E2F36FB214E5D7B200470F0F /* Project object */;
+}
