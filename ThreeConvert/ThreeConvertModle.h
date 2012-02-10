@@ -10,4 +10,9 @@
 
 @interface ThreeConvertModle : NSObject
 
+@property (strong, nonatomic) NSString *fbxScriptLocation;
+@property (strong, nonatomic) NSString *objScriptLocation;
+
+
+
 @end

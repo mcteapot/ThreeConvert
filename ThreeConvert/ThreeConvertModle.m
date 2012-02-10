@@ -8,6 +8,16 @@
 
 #import "ThreeConvertModle.h"
 
+@interface ThreeConvertModle()
+//private variables
+@end
+
+
 @implementation ThreeConvertModle
+
+@synthesize fbxScriptLocation;
+@synthesize objScriptLocation;
+
+
 
 @end

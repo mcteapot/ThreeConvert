@@ -10,6 +10,9 @@
 
 @interface ThreeConvertAppDelegate : NSObject <NSApplicationDelegate>
 
+
+
 @property (assign) IBOutlet NSWindow *window;
+- (IBAction)linkScript:(id)sender;
 
 @end

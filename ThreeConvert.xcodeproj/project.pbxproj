@@ -13,6 +13,7 @@
 		E2F36FD014E5D7B200470F0F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E2F36FCE14E5D7B200470F0F /* Credits.rtf */; };
 		E2F36FD314E5D7B200470F0F /* ThreeConvertAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F36FD214E5D7B200470F0F /* ThreeConvertAppDelegate.m */; };
 		E2F36FD614E5D7B200470F0F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2F36FD414E5D7B200470F0F /* MainMenu.xib */; };
+		E2F36FE214E5D87E00470F0F /* ThreeConvertModle.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F36FE114E5D87E00470F0F /* ThreeConvertModle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		E2F36FD114E5D7B200470F0F /* ThreeConvertAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeConvertAppDelegate.h; sourceTree = "<group>"; };
 		E2F36FD214E5D7B200470F0F /* ThreeConvertAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeConvertAppDelegate.m; sourceTree = "<group>"; };
 		E2F36FD514E5D7B200470F0F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E2F36FE014E5D87E00470F0F /* ThreeConvertModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeConvertModle.h; sourceTree = "<group>"; };
+		E2F36FE114E5D87E00470F0F /* ThreeConvertModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeConvertModle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				E2F36FD114E5D7B200470F0F /* ThreeConvertAppDelegate.h */,
 				E2F36FD214E5D7B200470F0F /* ThreeConvertAppDelegate.m */,
 				E2F36FD414E5D7B200470F0F /* MainMenu.xib */,
+				E2F36FE014E5D87E00470F0F /* ThreeConvertModle.h */,
+				E2F36FE114E5D87E00470F0F /* ThreeConvertModle.m */,
 				E2F36FC614E5D7B200470F0F /* Supporting Files */,
 			);
 			path = ThreeConvert;
@@ -168,6 +173,7 @@
 			files = (
 				E2F36FCC14E5D7B200470F0F /* main.m in Sources */,
 				E2F36FD314E5D7B200470F0F /* ThreeConvertAppDelegate.m in Sources */,
+				E2F36FE214E5D87E00470F0F /* ThreeConvertModle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
