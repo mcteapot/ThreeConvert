@@ -12,7 +12,8 @@
 
 @property (strong, nonatomic) NSString *fbxScriptLocation;
 @property (strong, nonatomic) NSString *objScriptLocation;
-
+@property (strong, nonatomic) NSString *outputFolderLocation;
+@property  NSInteger fileType;
 
 
 @end

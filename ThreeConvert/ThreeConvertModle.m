@@ -17,7 +17,8 @@
 
 @synthesize fbxScriptLocation;
 @synthesize objScriptLocation;
-
+@synthesize outputFolderLocation;
+@synthesize fileType;
 
 
 @end

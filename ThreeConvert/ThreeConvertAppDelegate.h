@@ -13,6 +13,14 @@
 
 
 @property (assign) IBOutlet NSWindow *window;
+
 - (IBAction)linkScript:(id)sender;
+- (IBAction)setFileType:(id)sender;
+- (IBAction)setOutputFolder:(id)sender;
+- (IBAction)setFilesForConversion:(id)sender;
+
+
+
+@property (weak) IBOutlet NSTextField *linkScriptText;
 
 @end

@@ -18,11 +18,12 @@
 
 
 @implementation ThreeConvertAppDelegate
+@synthesize linkScriptText = _linkScriptText;
 
 @synthesize window = _window;
 @synthesize theConverter = _theConverter;
 
-// Lady instansation of our modle
+// Lazy instansation of our modle
 - (ThreeConvertModle *)theConverter {
     if (!_theConverter) {
         _theConverter = [[ThreeConvertModle alloc] init];
@@ -33,36 +34,72 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    self.theConverter.fileType = 0;
 }
 
+
+// UIButton to open up files 
 - (IBAction)linkScript:(id)sender {
-    int i; // Loop counter.
+    
+    NSArray *fileTypesArray = [NSArray arrayWithObjects:@"py", nil];
     
     // Create the File Open Dialog class.
     NSOpenPanel* openDlg = [NSOpenPanel openPanel];
     
-    // Enable the selection of files in the dialog.
-    [openDlg setCanChooseFiles:YES];
-    
-    // Enable the selection of directories in the dialog.
-    [openDlg setCanChooseDirectories:YES];
+    // Enable the selection options in the dialog.
+    [openDlg setCanChooseFiles:YES];    
+    [openDlg setAllowedFileTypes:fileTypesArray];
     
     // Display the dialog.  If the OK button was pressed,
     // process the files.
-    if ( [openDlg runModalForDirectory:nil file:nil] == NSOKButton )
+    if ( [openDlg runModal] == NSOKButton )
     {
-        // Get an array containing the full filenames of all
-        // files and directories selected.
-        //filePath = [[zOpenPanel URL] retain]
-        NSArray* files = [openDlg filenames];
+        self.theConverter.fbxScriptLocation = [[openDlg URL] path];
+        NSLog(@"%@", self.theConverter.fbxScriptLocation);
         
-        // Loop through all the files and process them.
-        for( i = 0; i < [files count]; i++ )
-        {
-            NSString* fileName = [files objectAtIndex:i];
-            
-            // Do something with the filename.
-        }
+    }
+}
+
+// UI Checks the segmented controller
+- (IBAction)setFileType:(id)sender {
+    
+    // Sets the file type with a (int)NSInteger
+    self.theConverter.fileType = [sender selectedSegment];
+    NSLog(@"%d", self.theConverter.fileType);
+
+}
+
+
+// UI Sets folder to putput files
+- (IBAction)setOutputFolder:(id)sender {
+        
+    // Create the File Open Dialog class.
+    NSOpenPanel* openDlg = [NSOpenPanel openPanel];
+    
+    // Enable the selection options in the dialog.
+    [openDlg setCanChooseFiles:NO];
+    [openDlg setCanChooseDirectories:YES];
+    [openDlg setCanCreateDirectories:YES];
+    
+
+    // Display the dialog.  If the OK button was pressed,
+    // process the files.
+    if ( [openDlg runModal] == NSOKButton )
+    {
+        self.theConverter.outputFolderLocation = [[openDlg URL] path];
+        NSLog(@"%@", self.theConverter.outputFolderLocation);
+        
+    }
+    
+    
+}
+
+// UIButton to choose files for conversion
+- (IBAction)setFilesForConversion:(id)sender {
+    if (self.theConverter.fileType == 0) {
+        NSLog(@"only obj file ones are choosen");
+    } else if (self.theConverter.fileType == 1) {
+        NSLog(@"only fbx file ones are choosen");
     }
 }
 @end
