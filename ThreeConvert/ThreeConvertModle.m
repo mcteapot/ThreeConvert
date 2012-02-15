@@ -18,7 +18,12 @@
 @synthesize fbxScriptLocation;
 @synthesize objScriptLocation;
 @synthesize outputFolderLocation;
+@synthesize filesForConversion;
 @synthesize fileType;
+
+- (void)clearFileArray {
+    self.filesForConversion = nil;
+}
 
 
 @end

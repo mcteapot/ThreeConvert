@@ -13,7 +13,9 @@
 @property (strong, nonatomic) NSString *fbxScriptLocation;
 @property (strong, nonatomic) NSString *objScriptLocation;
 @property (strong, nonatomic) NSString *outputFolderLocation;
+@property (strong, nonatomic) NSArray *filesForConversion;
 @property  NSInteger fileType;
 
+- (void)clearFileArray;
 
 @end
