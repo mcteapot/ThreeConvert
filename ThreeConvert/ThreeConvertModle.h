@@ -10,12 +10,18 @@
 
 @interface ThreeConvertModle : NSObject
 
-@property (strong, nonatomic) NSString *fbxScriptLocation;
-@property (strong, nonatomic) NSString *objScriptLocation;
-@property (strong, nonatomic) NSString *outputFolderLocation;
+//CHANGE NSString TO NSURL!!!!
+@property (strong, nonatomic) NSURL *fbxScriptLocation;
+@property (strong, nonatomic) NSURL *objScriptLocation;
+@property (strong, nonatomic) NSURL *outputFolderLocation;
 @property (strong, nonatomic) NSArray *filesForConversion;
 @property  NSInteger fileType;
 
 - (void)clearFileArray;
+
+
+- (BOOL)convertFbxFiles;
+
+- (BOOL)convertObjFiles;
 
 @end

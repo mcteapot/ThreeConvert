@@ -18,15 +18,19 @@
 
 
 @implementation ThreeConvertAppDelegate
+
+@synthesize scriptTextLabel = _scriptTextLabel;
+@synthesize outputTextLabel = _outputTextLabel;
 @synthesize theTable = _theTable;
 @synthesize arrayController = _arrayController;
-@synthesize linkScriptText = _linkScriptText;
+
 
 @synthesize window = _window;
 @synthesize theConverter = _theConverter;
 
 // Lazy instansation of our modle
 - (ThreeConvertModle *)theConverter {
+    
     if (!_theConverter) {
         _theConverter = [[ThreeConvertModle alloc] init];
     }
@@ -37,10 +41,12 @@
 {
     // Insert code here to initialize your application
     self.theConverter.fileType = 0;
+    
     [self.theTable setAllowsColumnSelection:NO];
     [self.theTable setAllowsColumnReordering:NO];
     [self.theTable setAllowsMultipleSelection:NO];
     [self.theTable setEnabled:NO];
+
 }
 
 
@@ -58,10 +64,15 @@
     
     // Display the dialog.  If the OK button was pressed,
     // process the files.
-    if ( [openDlg runModal] == NSOKButton )
-    {
-        self.theConverter.fbxScriptLocation = [[openDlg URL] path];
-        NSLog(@"%@", self.theConverter.fbxScriptLocation);
+    if ( [openDlg runModal] == NSOKButton ) {
+        if (self.theConverter.fileType == 0) {
+            self.theConverter.objScriptLocation = [openDlg URL];
+            NSLog(@"Script is %@", [self.theConverter.objScriptLocation path]);
+        } else if (self.theConverter.fileType == 1) {
+            self.theConverter.fbxScriptLocation = [openDlg URL];
+            NSLog(@"Script is %@", [self.theConverter.fbxScriptLocation path]);
+        }
+        [self updateScriptTextLabel];
         
     }
 }
@@ -69,12 +80,17 @@
 // UI Checks the segmented controller
 - (IBAction)setFileType:(id)sender {
     
-    // Clears the array of files to convert
-    [self.theConverter clearFileArray];
+    // Clears the arrays of files to convert
+    [self clearFileArrays];
+    
+    // Clears the table view        
+    [self clearTable];
     
     // Sets the file type with a (int)NSInteger
     self.theConverter.fileType = [sender selectedSegment];
-    NSLog(@"%d", self.theConverter.fileType);
+    NSLog(@"%ld", self.theConverter.fileType);
+    
+    [self updateScriptTextLabel];
 
 }
 
@@ -93,10 +109,11 @@
 
     // Display the dialog.  If the OK button was pressed,
     // process the files.
-    if ( [openDlg runModal] == NSOKButton )
-    {
-        self.theConverter.outputFolderLocation = [[openDlg URL] path];
-        NSLog(@"%@", self.theConverter.outputFolderLocation);
+    if ( [openDlg runModal] == NSOKButton ) {
+        self.theConverter.outputFolderLocation = [openDlg URL];
+        [self.outputTextLabel setTitleWithMnemonic:[self.theConverter.outputFolderLocation path]];
+        
+        NSLog(@"%@", [self.theConverter.outputFolderLocation path]);
         
     }
     
@@ -105,6 +122,7 @@
 
 // UIButton to choose files for conversion
 - (IBAction)setFilesForConversion:(id)sender {
+    
     
     NSArray *fileTypesArray;
     // Create the File Open Dialog class.
@@ -125,8 +143,13 @@
     
     // Display the dialog.  If the OK button was pressed,
     // process the files.
-    if ( [openDlg runModal] == NSOKButton )
-    {
+    if ( [openDlg runModal] == NSOKButton ) {
+        // Clears the arrays of files to convert
+        [self clearFileArrays];
+        
+        // Clears the table view        
+        [self clearTable];
+        
         NSArray *files = [openDlg URLs];
 
         if (files) {
@@ -135,26 +158,22 @@
         NSLog(@"New arry \n %@",files);
         NSLog(@"Old arry \n %@",self.theConverter.filesForConversion);
         
-  
     }
     [self populateTable];
     
 }
 
-// UIButton to clear all selected files
-- (IBAction)clearFiles:(id)sender {
-    
-    // Clears the array of files to convert
-    [self.theConverter clearFileArray];
-    
-    NSLog(@"File arry \n %@",self.theConverter.filesForConversion);
-    
-    [self clearTable];
-}
 
+// UIButton to covert selected files
 - (IBAction)convertFiles:(id)sender {
+    
+    // Create the new files
+    [self.theConverter convertFbxFiles];
+    
 }
 
+
+// Method to populate NSTableView with Arry or URLs
 - (void)populateTable {
     
     int i;
@@ -176,11 +195,31 @@
 
 }
 
+// Method to clear Array of URLs in modle
+- (void)clearFileArrays {
+
+    [self.theConverter clearFileArray];
+}
+
+// Method to clear NSTableview
 - (void)clearTable {
     
     [[self.arrayController content] removeAllObjects];
     [self.theTable reloadData];
     [self.theTable deselectAll:nil];
+}
+
+// Method to script link in NSTextField
+- (void)updateScriptTextLabel {
+
+    if (self.theConverter.fileType == 0 && self.theConverter.objScriptLocation) {
+
+        [self.scriptTextLabel setTitleWithMnemonic:[self.theConverter.objScriptLocation path]];
+    } else if (self.theConverter.fileType == 1 && self.theConverter.fbxScriptLocation) {
+        [self.scriptTextLabel setTitleWithMnemonic:[self.theConverter.fbxScriptLocation path]];
+    } else {
+        [self.scriptTextLabel setTitleWithMnemonic:@""];
+    }
 }
 
 @end
