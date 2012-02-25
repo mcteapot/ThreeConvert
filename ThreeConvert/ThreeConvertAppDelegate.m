@@ -168,7 +168,7 @@
 - (IBAction)convertFiles:(id)sender {
     
     // Create the new files
-    [self.theConverter convertFbxFiles];
+    [self.theConverter convertObjFiles];
     
 }
 
