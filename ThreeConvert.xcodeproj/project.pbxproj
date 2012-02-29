@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E22EE59E14FDE54C0024CF55 /* threeconvertlogo01.tif in Resources */ = {isa = PBXBuildFile; fileRef = E22EE59D14FDE54C0024CF55 /* threeconvertlogo01.tif */; };
+		E2A8E65614FDE728008C59E1 /* threeconvert.icns in Resources */ = {isa = PBXBuildFile; fileRef = E2A8E65514FDE728008C59E1 /* threeconvert.icns */; };
 		E2F36FC014E5D7B200470F0F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F36FBF14E5D7B200470F0F /* Cocoa.framework */; };
 		E2F36FCA14E5D7B200470F0F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2F36FC814E5D7B200470F0F /* InfoPlist.strings */; };
 		E2F36FCC14E5D7B200470F0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F36FCB14E5D7B200470F0F /* main.m */; };
@@ -19,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		E22EE59D14FDE54C0024CF55 /* threeconvertlogo01.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = threeconvertlogo01.tif; path = ../threeconvertlogo01.tif; sourceTree = "<group>"; };
+		E2A8E65514FDE728008C59E1 /* threeconvert.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = threeconvert.icns; sourceTree = "<group>"; };
 		E2F36FBB14E5D7B200470F0F /* ThreeConvert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeConvert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F36FBF14E5D7B200470F0F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E2F36FC214E5D7B200470F0F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -59,6 +60,7 @@
 		E2F36FB014E5D7B200470F0F = {
 			isa = PBXGroup;
 			children = (
+				E2A8E65514FDE728008C59E1 /* threeconvert.icns */,
 				E2F36FC514E5D7B200470F0F /* ThreeConvert */,
 				E2F36FBE14E5D7B200470F0F /* Frameworks */,
 				E2F36FBC14E5D7B200470F0F /* Products */,
@@ -172,7 +174,7 @@
 				E2F36FCA14E5D7B200470F0F /* InfoPlist.strings in Resources */,
 				E2F36FD014E5D7B200470F0F /* Credits.rtf in Resources */,
 				E2F36FD614E5D7B200470F0F /* MainMenu.xib in Resources */,
-				E22EE59E14FDE54C0024CF55 /* threeconvertlogo01.tif in Resources */,
+				E2A8E65614FDE728008C59E1 /* threeconvert.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
