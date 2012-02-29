@@ -2495,6 +2495,14 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
+						<string key="label">convertButton</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="186423724"/>
+					</object>
+					<int key="connectionID">695</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="246031462"/>
 						<reference key="destination" ref="976324537"/>
@@ -3894,7 +3902,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">694</int>
+			<int key="maxID">695</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3973,6 +3981,7 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="arrayController">NSArrayController</string>
+						<string key="convertButton">NSButton</string>
 						<string key="outputTextLabel">NSTextField</string>
 						<string key="scriptTextLabel">NSTextField</string>
 						<string key="theTable">NSTableView</string>
@@ -3982,6 +3991,10 @@
 						<object class="IBToOneOutletInfo" key="arrayController">
 							<string key="name">arrayController</string>
 							<string key="candidateClassName">NSArrayController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="convertButton">
+							<string key="name">convertButton</string>
+							<string key="candidateClassName">NSButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="outputTextLabel">
 							<string key="name">outputTextLabel</string>

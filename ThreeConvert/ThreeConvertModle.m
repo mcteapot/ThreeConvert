@@ -9,8 +9,10 @@
 #import "ThreeConvertModle.h"
 
 @interface ThreeConvertModle()
-//private variables
+// Private variables
 
+// Private methods
+- (NSString*)jsPath:(NSURL*) aURL;
 @end
 
 
@@ -31,41 +33,54 @@
 // Method to convert stored fbx files
 - (BOOL)convertFbxFiles {
     
-    // Set directory to run command
-    NSTask *task;
-    task = [[NSTask alloc] init];
-    task.launchPath = @"/usr/bin/python"; 
+    int i;
     
-    // Set argumetn array for commands and arguments
-    NSArray *arguments;
-    NSString *pyScript = [NSString stringWithFormat:@"/Users/archieoi/Work/Testing/obj/convert_obj_three.py"];
-    NSString *pyInputFlag = [NSString stringWithFormat:@"-i"];
-    NSString *pyInputLocation = [NSString stringWithFormat:@"/Users/archieoi/Work/Testing/convert/ship01.obj"]; 
-    NSString *pyOutputFlag = [NSString stringWithFormat:@"-o"]; 
-    NSString *pyOutputLocation = [NSString stringWithFormat:@"/Users/archieoi/Work/Testing/convert/output/ship01.js"]; 
-
-    //NSLog(@"shell script: %@ %@", pyScript, pyInputFlag);
+    for (i = 0; i < [self.filesForConversion count]; i++) {
+        
+        // Set directory to run command
+        NSTask *task;
+        task = [[NSTask alloc] init];
+        task.launchPath = @"/usr/bin/python"; 
+        
+        // Set argumetn array for commands and arguments
+        NSArray *arguments;
+        NSLog(@"Script Path: %@", [self.fbxScriptLocation path]);
+        NSString *pyScript = [NSString stringWithFormat:[self.fbxScriptLocation path]];
+        
+        NSString *pyInputFlag = [NSString stringWithFormat:@"-i"];
+        NSLog(@"Obj Path: %@", [[self.filesForConversion objectAtIndex:i] path]);
+        NSString *pyInputLocation = [NSString stringWithString:[[self.filesForConversion objectAtIndex:i] path]];
+        
+        NSString *pyOutputFlag = [NSString stringWithFormat:@"-o"];
+        NSLog(@"Output Path: %@", [self jsPath:[self.filesForConversion objectAtIndex:i]]);
+        NSString *pyOutputLocation = [self jsPath:[self.filesForConversion objectAtIndex:i]]; 
+        
+        //NSLog(@"shell script: %@ %@", pyScript, pyInputFlag);
+        
+        arguments = [NSArray arrayWithObjects:pyScript, pyInputFlag, pyInputLocation, pyOutputFlag, pyOutputLocation, nil];
+        task.arguments = arguments;
+        //The magic line that keeps your log where it belongs
+        [task setStandardInput:[NSPipe pipe]];
+        
+        NSPipe *pipe;
+        pipe = [NSPipe pipe];
+        [task setStandardOutput: pipe];
+        
+        NSFileHandle *file;
+        file = [pipe fileHandleForReading];
+        
+        [task launch];
+        
+        NSData *data;
+        data = [file readDataToEndOfFile];
+        
+        NSString *string;
+        string = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+        NSLog (@"script returned:\n%@", string);
+        
+    }
     
-    arguments = [NSArray arrayWithObjects:pyScript, pyInputFlag, pyInputLocation, pyOutputFlag, pyOutputLocation, nil];
-    task.arguments = arguments;
-    //The magic line that keeps your log where it belongs
-    [task setStandardInput:[NSPipe pipe]];
     
-    NSPipe *pipe;
-    pipe = [NSPipe pipe];
-    [task setStandardOutput: pipe];
-    
-    NSFileHandle *file;
-    file = [pipe fileHandleForReading];
-    
-    [task launch];
-    
-    NSData *data;
-    data = [file readDataToEndOfFile];
-    
-    NSString *string;
-    string = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-    NSLog (@"script returned:\n%@", string);    
     
     return YES;
 }
@@ -120,8 +135,6 @@
         
     }
 
- 
-    
     return YES;
 }
 
@@ -144,5 +157,7 @@
 
     return jsOutputPath;
 }
+
+
 
 @end

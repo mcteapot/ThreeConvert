@@ -13,6 +13,14 @@
 @interface ThreeConvertAppDelegate()
 
 @property (nonatomic, strong) ThreeConvertModle *theConverter;
+// Private methods
+- (void)populateTable;
+- (void)clearTable;
+- (void)updateScriptTextLabel;
+
+- (BOOL)checkToConvert;
+- (void)fileConvertionCompleteAlert;
+- (void)fbxFileAlert;
 
 @end
 
@@ -23,6 +31,7 @@
 @synthesize outputTextLabel = _outputTextLabel;
 @synthesize theTable = _theTable;
 @synthesize arrayController = _arrayController;
+@synthesize convertButton = _convertButton;
 
 
 @synthesize window = _window;
@@ -37,6 +46,7 @@
     return _theConverter;
 }
 
+// First method to run on startup
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
@@ -46,6 +56,8 @@
     [self.theTable setAllowsColumnReordering:NO];
     [self.theTable setAllowsMultipleSelection:NO];
     [self.theTable setEnabled:NO];
+    
+    [self checkToConvert];
 
 }
 
@@ -63,7 +75,7 @@
     [openDlg setAllowedFileTypes:fileTypesArray];
     
     // Display the dialog.  If the OK button was pressed,
-    // process the files.
+    // Process the files.
     if ( [openDlg runModal] == NSOKButton ) {
         if (self.theConverter.fileType == 0) {
             self.theConverter.objScriptLocation = [openDlg URL];
@@ -75,13 +87,15 @@
         [self updateScriptTextLabel];
         
     }
+    
+    [self checkToConvert];
 }
 
 // UI Checks the segmented controller
 - (IBAction)setFileType:(id)sender {
     
     // Clears the arrays of files to convert
-    [self clearFileArrays];
+    [self.theConverter clearFileArray];
     
     // Clears the table view        
     [self clearTable];
@@ -91,6 +105,8 @@
     NSLog(@"%ld", self.theConverter.fileType);
     
     [self updateScriptTextLabel];
+    
+    [self checkToConvert];
 
 }
 
@@ -108,7 +124,7 @@
     
 
     // Display the dialog.  If the OK button was pressed,
-    // process the files.
+    // Process the files.
     if ( [openDlg runModal] == NSOKButton ) {
         self.theConverter.outputFolderLocation = [openDlg URL];
         [self.outputTextLabel setTitleWithMnemonic:[self.theConverter.outputFolderLocation path]];
@@ -117,12 +133,12 @@
         
     }
     
+    [self checkToConvert];
     
 }
 
 // UIButton to choose files for conversion
 - (IBAction)setFilesForConversion:(id)sender {
-    
     
     NSArray *fileTypesArray;
     // Create the File Open Dialog class.
@@ -145,7 +161,7 @@
     // process the files.
     if ( [openDlg runModal] == NSOKButton ) {
         // Clears the arrays of files to convert
-        [self clearFileArrays];
+        [self.theConverter clearFileArray];
         
         // Clears the table view        
         [self clearTable];
@@ -161,6 +177,8 @@
     }
     [self populateTable];
     
+    [self checkToConvert];
+    
 }
 
 
@@ -168,7 +186,23 @@
 - (IBAction)convertFiles:(id)sender {
     
     // Create the new files
-    [self.theConverter convertObjFiles];
+    if (self.theConverter.fileType == 0) {
+        [self.theConverter convertObjFiles];
+    } else if (self.theConverter.fileType == 1) {
+        [self fbxFileAlert];
+        //[self.theConverter convertFbxFiles];
+    }
+    
+    [self fileConvertionCompleteAlert];
+    
+    // Clears the arrays of files to convert
+    [self.theConverter clearFileArray];
+    
+    // Clears the table view        
+    [self clearTable];
+    
+    
+    [self checkToConvert];
     
 }
 
@@ -195,11 +229,6 @@
 
 }
 
-// Method to clear Array of URLs in modle
-- (void)clearFileArrays {
-
-    [self.theConverter clearFileArray];
-}
 
 // Method to clear NSTableview
 - (void)clearTable {
@@ -213,13 +242,58 @@
 - (void)updateScriptTextLabel {
 
     if (self.theConverter.fileType == 0 && self.theConverter.objScriptLocation) {
-
         [self.scriptTextLabel setTitleWithMnemonic:[self.theConverter.objScriptLocation path]];
     } else if (self.theConverter.fileType == 1 && self.theConverter.fbxScriptLocation) {
         [self.scriptTextLabel setTitleWithMnemonic:[self.theConverter.fbxScriptLocation path]];
     } else {
         [self.scriptTextLabel setTitleWithMnemonic:@""];
     }
+}
+
+// Method to check to set enable state on convert button
+- (BOOL)checkToConvert {
+    
+    if ((self.theConverter.fileType == 0 && self.theConverter.objScriptLocation) || (self.theConverter.fileType == 1 && self.theConverter.fbxScriptLocation)) {
+        if (self.theConverter.outputFolderLocation && self.theConverter.filesForConversion) {
+             [self.convertButton setEnabled:YES];
+            NSLog(@"Convert button YES");
+            return YES;
+        } else {
+            [self.convertButton setEnabled:NO];
+            NSLog(@"Convert button NO");
+            return NO;
+        }
+    } else {
+        [self.convertButton setEnabled:NO];
+        NSLog(@"Convert button NO");
+        return NO;
+    }
+    
+    return NO;
+}
+
+// Method to alert user of files complted
+- (void)fileConvertionCompleteAlert {
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"Success!"];
+    [alert setInformativeText:@"Files were converted."];
+    [alert addButtonWithTitle:@"Ok"];
+    [alert beginSheetModalForWindow:_window
+                      modalDelegate:self
+                     didEndSelector:nil
+                        contextInfo:nil];
+}
+
+// Method to alert user of files complted
+- (void)fbxFileAlert {
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"Fbx Warning!"];
+    [alert setInformativeText:@"convert_fbx_three.py script is out of date, so conversion will not work."];
+    [alert addButtonWithTitle:@"Lame"];
+    [alert beginSheetModalForWindow:_window
+                      modalDelegate:self
+                     didEndSelector:nil
+                        contextInfo:nil];
 }
 
 @end

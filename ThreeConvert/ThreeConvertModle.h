@@ -24,6 +24,6 @@
 
 - (BOOL)convertObjFiles;
 
-- (NSString*)jsPath:(NSURL*) aURL;
+
 
 @end

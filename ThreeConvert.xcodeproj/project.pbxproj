@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E22EE59E14FDE54C0024CF55 /* threeconvertlogo01.tif in Resources */ = {isa = PBXBuildFile; fileRef = E22EE59D14FDE54C0024CF55 /* threeconvertlogo01.tif */; };
 		E2F36FC014E5D7B200470F0F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F36FBF14E5D7B200470F0F /* Cocoa.framework */; };
 		E2F36FCA14E5D7B200470F0F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2F36FC814E5D7B200470F0F /* InfoPlist.strings */; };
 		E2F36FCC14E5D7B200470F0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F36FCB14E5D7B200470F0F /* main.m */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E22EE59D14FDE54C0024CF55 /* threeconvertlogo01.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = threeconvertlogo01.tif; path = ../threeconvertlogo01.tif; sourceTree = "<group>"; };
 		E2F36FBB14E5D7B200470F0F /* ThreeConvert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeConvert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F36FBF14E5D7B200470F0F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E2F36FC214E5D7B200470F0F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -46,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E22EE59F14FDE5650024CF55 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E22EE59D14FDE54C0024CF55 /* threeconvertlogo01.tif */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		E2F36FB014E5D7B200470F0F = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 				E2F36FE014E5D87E00470F0F /* ThreeConvertModle.h */,
 				E2F36FE114E5D87E00470F0F /* ThreeConvertModle.m */,
 				E2F36FC614E5D7B200470F0F /* Supporting Files */,
+				E22EE59F14FDE5650024CF55 /* Images */,
 			);
 			path = ThreeConvert;
 			sourceTree = "<group>";
@@ -161,6 +172,7 @@
 				E2F36FCA14E5D7B200470F0F /* InfoPlist.strings in Resources */,
 				E2F36FD014E5D7B200470F0F /* Credits.rtf in Resources */,
 				E2F36FD614E5D7B200470F0F /* MainMenu.xib in Resources */,
+				E22EE59E14FDE54C0024CF55 /* threeconvertlogo01.tif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +307,7 @@
 				E2F36FDB14E5D7B200470F0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

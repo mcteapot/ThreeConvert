@@ -20,15 +20,14 @@
 - (IBAction)setFilesForConversion:(id)sender;
 - (IBAction)convertFiles:(id)sender;
 
-- (void)populateTable;
-- (void)clearTable;
-- (void)clearFileArrays;
-- (void)updateScriptTextLabel;
+
+
 
 
 @property (weak) IBOutlet NSTextField *scriptTextLabel;
 @property (weak) IBOutlet NSTextField *outputTextLabel;
 @property (weak) IBOutlet NSTableView *theTable;
 @property (weak) IBOutlet NSArrayController *arrayController;
+@property (weak) IBOutlet NSButton *convertButton;
 
 @end
