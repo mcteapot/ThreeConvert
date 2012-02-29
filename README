@@ -1,7 +1,13 @@
 ThreeConvert
 02.10.12
-by Arjun Prakash
+by Arjun Prakash 
 
 Utility App for OX to convert 3d object to three.js
+
+ToDo
+-clean up UI
+-add check boxes for flags
+-fix Fbx python script
+-creat native outputer for C4D!
 
 
